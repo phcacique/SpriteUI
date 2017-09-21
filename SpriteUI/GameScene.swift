@@ -22,14 +22,17 @@ class GameScene: SKScene {
         mainRef.scale(to: self.size)
         
         let component:SUIComponent = SUIComponent(id: "button1", style: style!)
-        component.scale(to: CGSize(width: 100, height: 100))
         
         let component2:SUIComponent = SUIComponent(id: "button2", style: style!)
         component2.scale(to: CGSize(width: 50, height: 50))
         
-        component.addPositionConstraint(id: "C0", reference: mainRef, margin: .left, offset: 0, inset:true)
+        component.addScaleConstraint(id: "S0", reference: mainRef, xScale: 0.2, yScale:0.2)
+        component.addPositionConstraint(id: "P0", reference: mainRef, margin: .right, inset:true)
+        component.addPositionConstraint(id: "P1", reference: mainRef, margin: .top, inset:true)
         
-        component2.addPositionConstraint(id: "C1", reference: component, margin: .bottom, offset: 0)
+        component2.addScaleConstraint(id: "S0", reference: mainRef, xScale: 0.2, yScale:0.2)
+        component2.addPositionConstraint(id: "P0", reference: component, margin: .centerX)
+        component2.addPositionConstraint(id: "P1", reference: component, margin: .bottom)
         
         addChild(component)
         addChild(component2)

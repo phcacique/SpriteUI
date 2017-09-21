@@ -31,6 +31,17 @@ public class SUITextureManager{
         SKTextureAtlas.preloadTextureAtlases(atlasmap, withCompletionHandler: handler)
     }
     
+    func getTextureAtlas(_ name:String) -> SKTextureAtlas{
+        var atl:SKTextureAtlas = atlas[0].atlas
+        for a in atlas{
+            if a.name == name{
+                atl = a.atlas
+                break
+            }
+        }
+        return atl
+    }
+    
     func getTextureAtlasFrames(_ name:String) -> [SKTexture]{
         
         var textureAtlas:SKTextureAtlas = SKTextureAtlas()

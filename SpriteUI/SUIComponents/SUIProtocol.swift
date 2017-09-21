@@ -29,5 +29,4 @@ protocol SUIProtocol{
     func clearConstraints()
     func getConstraint(id:String) -> SUIConstraint
     func applyConstraints()
-    
 }
