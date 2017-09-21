@@ -1,0 +1,94 @@
+//
+//  UIComponent.swift
+//  SpriteUI
+//
+//  Created by Pedro Cacique on 21/09/17.
+//  Copyright © 2017 Pedro Cacique. All rights reserved.
+//
+
+import Foundation
+import SpriteKit
+
+class SUIComponent:SKSpriteNode, SUIProtocol{
+    var id: String
+    var sui_constraints: [SUIConstraint]
+    var style:SUIStyle
+    
+    init(id:String, style:SUIStyle, atlasName:String = "SimpleButton") {
+        self.id = id
+        self.style = style
+        self.sui_constraints = [SUIConstraint]()
+        let texture = SUITextureManager.instance.getTextureAtlasFrames(atlasName)[0]
+        super.init(texture: texture, color: UIColor.black, size: texture.size())
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func onTouchBegan() {
+        
+    }
+    
+    func onTouchEnd() {
+        
+    }
+    
+    func onTouchMoved() {
+        
+    }
+    
+    func onTouchCancelled() {
+        
+    }
+    
+    func addConstraint(_ constraint: SUIConstraint) {
+        self.sui_constraints.append(constraint)
+        applyConstraints()
+    }
+    
+    func addPositionConstraint(id:String, reference:SUIComponent, margin:SUIMargin, offset:CGFloat, inset:Bool = false){
+        addConstraint(SUIPositionConstraint(id: id, target: self, reference: reference, margin: margin, offset: offset, inset:inset))
+    }
+    
+    func removeConstraint(_ constraint: SUIConstraint) {
+        
+    }
+    
+    func removeConstraint(id: String) {
+        for pos in 0..<sui_constraints.count{
+            if sui_constraints[pos].id == id {
+                sui_constraints.remove(at: pos)
+                break
+            }
+        }
+    }
+    
+    func removeConstraints(type: SUIConstraintType) {
+        for pos in 0..<sui_constraints.count{
+            if sui_constraints[pos].type == type {
+                sui_constraints.remove(at: pos)
+            }
+        }
+    }
+    
+    func clearConstraints() {
+        self.sui_constraints.removeAll()
+    }
+    
+    func getConstraint(id: String) -> SUIConstraint {
+        var constraint:SUIConstraint?
+        for c in self.sui_constraints{
+            if c.id == id {
+                constraint = c
+            }
+        }
+        return constraint!
+    }
+    
+    func applyConstraints(){
+        for c in self.sui_constraints{
+            c.apply()
+        }
+    }
+}

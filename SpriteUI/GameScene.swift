@@ -11,12 +11,28 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
+    var style:SUIStyle?
     
     override func didMove(to view: SKView) {
+        style = SUIStyle(handler:start)
+    }
+    
+    func start(){
+        let mainRef:SUIComponent = SUIComponent(id: "root", style: style!)
+        mainRef.scale(to: self.size)
         
+        let component:SUIComponent = SUIComponent(id: "button1", style: style!)
+        component.scale(to: CGSize(width: 100, height: 100))
         
+        let component2:SUIComponent = SUIComponent(id: "button2", style: style!)
+        component2.scale(to: CGSize(width: 50, height: 50))
+        
+        component.addPositionConstraint(id: "C0", reference: mainRef, margin: .left, offset: 0, inset:true)
+        
+        component2.addPositionConstraint(id: "C1", reference: component, margin: .bottom, offset: 0)
+        
+        addChild(component)
+        addChild(component2)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
