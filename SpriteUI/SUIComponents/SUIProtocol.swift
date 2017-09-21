@@ -9,11 +9,12 @@
 import Foundation
 
 protocol SUIProtocol{
-    
+    //common vars
     var SUIID:String {get set}
     
     func update()
     
+    //touch functions
     func onTouchBegan()
     func onTouchEnd()
     func onTouchMoved()
