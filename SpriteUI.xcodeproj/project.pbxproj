@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A74F338A1F751665000A88A1 /* SUIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F33891F751665000A88A1 /* SUIContainer.swift */; };
 		A7F067C11F73DEA40039C973 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F067C01F73DEA40039C973 /* AppDelegate.swift */; };
 		A7F067C31F73DEA40039C973 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7F067C21F73DEA40039C973 /* GameScene.sks */; };
 		A7F067C51F73DEA40039C973 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7F067C41F73DEA40039C973 /* Actions.sks */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A74F33891F751665000A88A1 /* SUIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIContainer.swift; sourceTree = "<group>"; };
 		A7F067BD1F73DEA40039C973 /* SpriteUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F067C01F73DEA40039C973 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7F067C21F73DEA40039C973 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				A7F067D91F73E21C0039C973 /* SUIProtocol.swift */,
 				A7F067DB1F73E3E90039C973 /* SUIComponent.swift */,
+				A74F33891F751665000A88A1 /* SUIContainer.swift */,
 			);
 			path = SUIComponents;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				A7F067E41F73F1740039C973 /* SUIStyle.swift in Sources */,
 				A7F067E81F743D190039C973 /* SUIScaleConstraint.swift in Sources */,
 				A7F067DF1F73E5120039C973 /* SUIConstraint.swift in Sources */,
+				A74F338A1F751665000A88A1 /* SUIContainer.swift in Sources */,
 				A7F067C11F73DEA40039C973 /* AppDelegate.swift in Sources */,
 				A7F067DA1F73E21C0039C973 /* SUIProtocol.swift in Sources */,
 				A7F067DC1F73E3E90039C973 /* SUIComponent.swift in Sources */,
