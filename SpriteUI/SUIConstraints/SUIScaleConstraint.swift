@@ -40,8 +40,11 @@ class SUIScaleConstraint:SUIConstraint{
             nh = h * nw/w
         } else if ( proportional == .min && mi == reference.size.height ) || ( proportional == .max && ma == reference.size.height ){
             nw = w * nh/h
+        } else if proportional == .x {
+            nh = target.size.height
+        } else if proportional == .y {
+            nw = target.size.width
         }
-        
         
 //        let nh = Game.instance.screenSize.height * screenScale
 //        let nw = w * nh/h

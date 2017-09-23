@@ -21,21 +21,24 @@ class GameScene: SKScene {
         let mainRef:SUIComponent = SUIComponent(id: "root", style: style!)
         mainRef.scale(to: self.size)
         
-        let component:SUIComponent = SUIComponent(id: "button1", style: style!)
+        let bar:SUIContainer = SUIContainer(id: "topbar", style:style!, hAlign: .center, vAlign: .center)
+        bar.addScaleConstraint(id: "S0", reference: mainRef, xScale: 1, yScale: 0.1, proportional: .none)
+        bar.addPositionConstraint(id: "P0", reference: mainRef, margin: .top, offset: 0, inset: true)
         
-        let component2:SUIComponent = SUIComponent(id: "button2", style: style!)
-        component2.scale(to: CGSize(width: 50, height: 50))
+        let button1:SUIComponent = SUIComponent(id: "b1", style: style!)
+        bar.addComponent(button1)
         
-        component.addScaleConstraint(id: "S0", reference: mainRef, xScale: 0.2, yScale:0.2)
-        component.addPositionConstraint(id: "P0", reference: mainRef, margin: .right, inset:true)
-        component.addPositionConstraint(id: "P1", reference: mainRef, margin: .top, inset:true)
+        let button2:SUIComponent = SUIComponent(id: "b2", style: style!)
+        bar.addComponent(button2)
         
-        component2.addScaleConstraint(id: "S0", reference: mainRef, xScale: 0.2, yScale:0.2)
-        component2.addPositionConstraint(id: "P0", reference: component, margin: .centerX)
-        component2.addPositionConstraint(id: "P1", reference: component, margin: .bottom)
+        let button3:SUIComponent = SUIComponent(id: "b3", style: style!)
+        bar.addComponent(button3)
         
-        addChild(component)
-        addChild(component2)
+        
+        addChild(button1)
+        addChild(button2)
+        addChild(button3)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

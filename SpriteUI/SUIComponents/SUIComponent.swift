@@ -13,8 +13,6 @@ class SUIComponent:SKSpriteNode, SUIProtocol{
     var id: String
     var sui_constraints: [SUIConstraint]
     var style:SUIStyle
-    var margin:(top:CGFloat, right:CGFloat, bottom:CGFloat, left:CGFloat) = (top:10, right:10, bottom:10, left:10)
-    var padding:(top:CGFloat, right:CGFloat, bottom:CGFloat, left:CGFloat) = (top:10, right:10, bottom:10, left:10)
     
     init(id:String, style:SUIStyle, atlasName:String = "SimpleButton", textureName:String = "button_yellow_up") {
         self.id = id
@@ -96,19 +94,5 @@ class SUIComponent:SKSpriteNode, SUIProtocol{
         for c in self.sui_constraints{
             c.apply()
         }
-    }
-    
-    func setMargin(top:CGFloat = 10, right:CGFloat = 10, bottom:CGFloat = 10, left:CGFloat = 0){
-        margin.top = top
-        margin.right = right
-        margin.bottom = bottom
-        margin.left = left
-    }
-    
-    func setPadding(top:CGFloat = 10, right:CGFloat = 10, bottom:CGFloat = 10, left:CGFloat = 0){
-        padding.top = top
-        padding.right = right
-        padding.bottom = bottom
-        padding.left = left
     }
 }

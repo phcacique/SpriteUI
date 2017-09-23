@@ -15,7 +15,7 @@ class SUIStyle{
     var simpleButton:String
     var handler:() -> Void
     
-    init(simpleButton:String = "SimpleButton", handler: @escaping () -> Void){
+    init(simpleButton:String = "SimpleButton", handler: @escaping () -> Void = {}){
         self.simpleButton = simpleButton
         self.handler = handler
         SUITextureManager.instance.addTextureAtlas(name: self.simpleButton)

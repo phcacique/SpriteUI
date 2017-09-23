@@ -39,20 +39,12 @@ class SUIPositionConstraint: SUIConstraint{
         switch(self.margin){
             case .right:
                 newPos.x = refPos.x + refSize.width/2 + w
-                newPos.x += target.margin.left * inOff
-                newPos.x += ( (inset) ? reference.padding.right : reference.margin.right ) * inOff
             case .left:
                 newPos.x = refPos.x - refSize.width/2 - w
-                newPos.x -= target.margin.right * inOff
-                newPos.x -= ( (inset) ? reference.padding.left : reference.margin.left ) * inOff
             case .top:
                 newPos.y = refPos.y + refSize.height/2 + h
-                newPos.y += target.margin.bottom * inOff
-                newPos.y += ( (inset) ? reference.padding.top : reference.margin.top ) * inOff
             case .bottom:
                 newPos.y = refPos.y - refSize.height/2 - h
-                newPos.y -= target.margin.top * inOff
-                newPos.y -= ( (inset) ? reference.padding.bottom : reference.margin.bottom ) * inOff
             case .centerX:
                 newPos.x = refPos.x
             case .centerY:
